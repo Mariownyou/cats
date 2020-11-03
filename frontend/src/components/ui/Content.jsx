@@ -1,8 +1,8 @@
 import { Switch, Route } from 'react-router-dom'
-import CatGrid from './CatGrid'
-import PostGrid from './PostGrid'
+import CatGrid from '../cats/CatGrid'
+import PostGrid from '../posts/PostGrid'
 
-export default function Content({ items, isLoading }) {
+export default function Content() {
     return (
     <Switch>
         <Route exact path='/cats' component={CatGrid}/>
