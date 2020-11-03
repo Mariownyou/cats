@@ -2,8 +2,8 @@ import './App.css';
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Header from './components/header'
-import HeaderComponent from './components/headerComponent'
-import CatsGrid from './components/catsGrid'
+import Grid from './components/grid'
+import Container from '@material-ui/core/Container';
 
 
 function App() {
@@ -23,15 +23,10 @@ function App() {
   }, [])
 
   return (
-    <div className='container'>
-      <Header>
-        <HeaderComponent name='Home'/>
-        <HeaderComponent name='Posts'/>
-        <HeaderComponent name='Cats'/>
-        <HeaderComponent name='About Us'/>
-      </Header>
-      <CatsGrid isLoading={isLoading} items={items} />
-    </div>
+    <Container>
+      <Header />
+      <Grid isLoading={isLoading} items={items} />
+    </Container>
   );
 }
 
