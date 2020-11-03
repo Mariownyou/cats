@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
+    'imagekit',
     'api',
 ]
 
@@ -133,6 +134,7 @@ CORS_ORIGIN_WHITELIST = (
     'https://google.com',
     'http://localhost:8000',
     'http://localhost:3000',
-    'http://127.0.0.1:9000'
+    'http://127.0.0.1:9000',
+    'http://192.168.1.116:3000'
 )
 CORS_ORIGIN_ALLOW_ALL = False
