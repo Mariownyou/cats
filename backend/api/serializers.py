@@ -1,14 +1,20 @@
 from rest_framework import serializers
-from .models import Post, Cats
+from .models import Post, Cat, Group
 
 
 class PostSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Post
-        fields = '__all__'
+        fields = ('url', 'id', 'title', 'text', 'group', 'pub_date', 'image')
 
     
-class CatsSerializer(serializers.HyperlinkedModelSerializer):
+class CatSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Cats
-        fields = '__all__'
+        model = Cat
+        fields = ('url', 'id', 'breed', 'age', 'image')
+
+    
+class GroupSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Group
+        fields = ('url', 'id', 'title', 'slug', 'description', 'image')

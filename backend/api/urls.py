@@ -4,7 +4,9 @@ from api import views
 
 router = routers.DefaultRouter()
 router.register(r'posts', views.PostViewSet)
-router.register(r'cats', views.CatsViewSet)
+router.register(r'cats', views.CatViewSet)
+router.register(r'groups', views.GroupViewSet)
+
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

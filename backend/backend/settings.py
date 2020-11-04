@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
+    'django_filters',
     'imagekit',
     'api',
 ]
@@ -138,3 +139,8 @@ CORS_ORIGIN_WHITELIST = (
     'http://192.168.1.116:3000'
 )
 CORS_ORIGIN_ALLOW_ALL = False
+
+# Rest
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+}

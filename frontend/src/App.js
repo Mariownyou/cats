@@ -1,17 +1,17 @@
 import './App.css';
-import { Container } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import Navbar from './components/ui/Navbar'
 import Content from './components/ui/Content'
+import { withRouter } from "react-router-dom"
 
 
 function App() {
   return (
-    <Container>
+    <Box>
       <Navbar />
       <Content />
-    </Container>
+    </Box>
   );
 }
 
-
-export default App;
+export default withRouter(App)

@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Grid } from '@material-ui/core';
-import PostCard from './PostCard'
+import GroupCard from './GroupCard'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,33 +17,35 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SpacingGrid({ match }) {
+export default function SpacingGrid(props) {
   const classes = useStyles();
   const [items, setItems] = useState([])
   const [isLoading, setIsLoading] = useState(true)
-  // const [query, setQuery] = useState('')
 
   useEffect(() => {
-    const url = `http://127.0.0.1:8000/api/posts?group=${match.params.group}`
+    const url = 'http://127.0.0.1:8000/api/groups/'
     const fetchItems = async () => {
       const result = await axios(url)
       console.log(result.data)
-      console.log(url, match)
       setItems(result.data)
       setIsLoading(false)
     }
 
     fetchItems()
-  }, [match.params.group])
+  }, [])
 
   return isLoading ? ( <h1>Loading...</h1> ) : (
     <Grid container className={classes.root} spacing={2}>
       <Grid item xs={12}>
-        {items.map(
-          item => (
-            <PostCard item={item} key={item.id} />
-          )
-        )}
+        <Grid container justify="center" spacing={3}>
+            {items.map(
+                item => (
+                <Grid key={item.id} item sm>
+                    <GroupCard item={item} />
+                </Grid>
+                )
+            )}
+        </Grid>
       </Grid>
     </Grid>
   );

@@ -27,7 +27,7 @@ export default function Footer() {
           centered
         >
           <Tab label="Кисы" to='/cats' component={Link} />
-          <Tab label="Посты" to='/posts' component={Link} />
+          <Tab label="Посты" to='/groups' component={Link} />
           <Tab label="Контакты" to='/about-us' component={Link} />
         </Tabs>
       </Paper>
